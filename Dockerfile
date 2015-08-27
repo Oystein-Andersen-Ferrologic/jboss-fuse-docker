@@ -2,9 +2,10 @@
 FROM jboss/base-jdk:7
 
 MAINTAINER Hiram Chirino <hchirino@redhat.com>
+MAINTAINER Öystein Andersen <oystein.andersen@ferrolgic.se>
 
 # Set the FUSE_VERSION env variable
-ENV FUSE_VERSION 6.2.0.redhat-059
+ENV FUSE_VERSION 6.2.1.redhat-026
 
 # If the container is launched with re-mapped ports, these ENV vars should
 # be set to the remapped values.
@@ -30,6 +31,8 @@ VOLUME /opt/jboss/jboss-fuse/bin
 VOLUME /opt/jboss/jboss-fuse/etc
 VOLUME /opt/jboss/jboss-fuse/data
 VOLUME /opt/jboss/jboss-fuse/deploy
+
+COPY users.properties /opt/jboss/jboss-fuse/etc/
 
 # lets default to the jboss-fuse dir so folks can more easily navigate to around the server install
 WORKDIR /opt/jboss/jboss-fuse
