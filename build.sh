@@ -1,4 +1,4 @@
-DOCKER_IMAGE_NAME=jboss/jboss-fuse-full
+DOCKER_IMAGE_NAME=ferrologic/fuse
 DOCKER_IMAGE_VERSION=latest
 
 docker rmi --force=true ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_VERSION}

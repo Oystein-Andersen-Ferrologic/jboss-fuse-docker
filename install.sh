@@ -5,7 +5,7 @@
 #
 
 # Adjust the following env vars if needed.
-FUSE_ARTIFACT_ID=jboss-fuse-karaf-full
+FUSE_ARTIFACT_ID=jboss-fuse-full
 FUSE_DISTRO_URL=http://origin-repository.jboss.org/nexus/content/groups/ea/org/jboss/fuse/${FUSE_ARTIFACT_ID}/${FUSE_VERSION}/${FUSE_ARTIFACT_ID}-${FUSE_VERSION}.zip
 
 # Lets fail fast if any command in this script does succeed.
@@ -34,6 +34,9 @@ rm -rf jboss-fuse/quickstarts
 sed -i -e 's/environment.prefix=FABRIC8_/environment.prefix=FUSE_/' jboss-fuse/etc/system.properties
 sed -i -e '/karaf.name = root/d' jboss-fuse/etc/system.properties
 sed -i -e '/runtime.id=/d' jboss-fuse/etc/system.properties
+
+# This is a change made by Oystein i order to make ActiveMq work even outside
+sed -i -e 's/activemq.host = localhost/activemq.host = 0.0.0.0/' jboss-fuse/etc/system.properties
 echo '
 if [ -z "$FUSE_KARAF_NAME" ]; then 
   export FUSE_KARAF_NAME="$HOSTNAME"
