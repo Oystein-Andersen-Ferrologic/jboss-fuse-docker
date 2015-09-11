@@ -1,7 +1,6 @@
 # Use latest jboss/base-jdk:7 image as the base
 FROM jboss/base-jdk:7
 
-MAINTAINER Hiram Chirino <hchirino@redhat.com>
 MAINTAINER Öystein Andersen <oystein.andersen@ferrolgic.se>
 
 # Set the FUSE_VERSION env variable
