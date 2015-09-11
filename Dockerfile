@@ -32,6 +32,7 @@ VOLUME /opt/jboss/jboss-fuse/data
 VOLUME /opt/jboss/jboss-fuse/deploy
 
 COPY users.properties /opt/jboss/jboss-fuse/etc/
+COPY local.conf /etc/locale.conf
 
 # lets default to the jboss-fuse dir so folks can more easily navigate to around the server install
 WORKDIR /opt/jboss/jboss-fuse
