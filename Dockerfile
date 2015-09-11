@@ -23,6 +23,8 @@ RUN /opt/jboss/install.sh
 
 EXPOSE 8181 8101 1099 44444 61616 1883 5672 61613 61617 8883 5671 61614
 
+# Set the locale to UTF-8
+COPY locale.conf /etc/locale.conf
 #
 # The following directories can hold config/data, so lets suggest the user
 # mount them as volumes.
